@@ -1,0 +1,11 @@
+@import "../utilities/variables";
+
+.footer{
+    background-color: $color-primario;
+    color: $color-footer;
+    padding: 10px;
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}

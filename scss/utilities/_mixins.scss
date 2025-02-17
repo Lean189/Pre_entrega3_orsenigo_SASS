@@ -1,0 +1,16 @@
+@import "../utilities/variables";
+
+@mixin bg-pan-left($duration: 8s, $timing: ease-in-out, $iteration: infinite) {
+  -webkit-animation: bg-pan-left $duration $timing $iteration;
+  animation: bg-pan-left $duration $timing $iteration;
+}
+
+@-webkit-keyframes bg-pan-left {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bg-pan-left {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
