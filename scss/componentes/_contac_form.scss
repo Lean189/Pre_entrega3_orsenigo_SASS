@@ -1,75 +1,109 @@
-// Estilos del formulario de contacto
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
 .contact-section {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-}
-
-.contact-section h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    padding: $spacing-large;
+    background: linear-gradient(135deg, #f9f9f9, #e3e3e3);
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    .contac{
+        display: flex;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $spacing-large;
+        width: 90%;
+        max-width: $container-width;
+
+        @media (min-width: $breakpoint-tablet) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+    }
+
+    .contact-form {
+        background: rgba(255, 255, 255, 0.95);
+        padding: $card-padding;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        width: 100%;
+        max-width: 500px;
+        
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: $spacing-small;
+            color: $color-text;
+        }
+
+        input,
+        textarea {
+            @include form-field(#ccc, $color-bottom);
+            color: $color-text;
+            padding: $spacing-medium;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button {
+            padding: $spacing-medium;
+            background-color: $color-bottom;
+            color: $color-text-claro;
+            border: none;
+            border-radius: $border-radius;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            font-size: 1.1rem;
+            font-weight: bold;
+            
+            &:hover {
+                background-color: darken($color-bottom, 10%);
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .contact-image {
+        text-align: center; 
+        @media (min-width: $breakpoint-tablet) {
+            text-align: left;
+        }
+        img {
+            border-radius: $border-radius;
+            box-shadow: $box-shadow;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
 }
 
-.contact-form {
-    background: rgba(255,255,255,0.9);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.contact-form label {
-    font-weight: bold;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.contact-form button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-}
-
-.contact-form button:hover {
-    background-color: #0056b3;
-}
-
-.contact-image img {
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    max-width: 100%;
-    height: auto;
-}
 
 .social-media {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
-}
-
-.social-media img {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
-
-.social-media img:hover {
-    opacity: 0.8;
+    img{
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        img:hover{
+            opacity: 0.8;
+        }
+    }
 }

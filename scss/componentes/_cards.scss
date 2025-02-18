@@ -2,19 +2,55 @@
 @import "../utilities/variables";
 @import "../utilities/mixins";
 
-main {
-    display: flex;
-    justify-content: space-between; 
-    align-items: flex-start; 
+// Estilos generales de la tienda
+.tienda {
+    padding: $grid-gap; 
+    display: flex;       
+    align-items: flex-start;
     gap: $grid-gap;
 }
 
+// Barra de búsqueda y categorías
 .search-and-categories {
-    width: 300px;
-    min-width: 200px;
-    .search-icon {
-        height: 20px;
-        padding-right: 10px;
+    display: flex;         
+    flex-direction: column; 
+    width: 250px;
+    flex-shrink: 0;
+
+  .search-container {
+        display: flex;
+        align-items: center;
+
+      .search-icon {
+            height: 20px;
+            padding-right: 10px;
+        }
+
+        input[type="text"] { 
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    }
+
+  .categories {
+        h2 {
+            margin-bottom: math.div($grid-gap, 2); 
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin-bottom: math.div($grid-gap, 4); 
+
+                a {
+                    text-decoration: none;
+                    color: $color-text;
+                }
+            }
+        }
     }
 }
 
@@ -23,11 +59,11 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: $grid-gap;
     padding: $grid-gap;
-    background: linear-gradient(90deg, #ebe4e4, #f1a261); 
+    background: linear-gradient(90deg, #ebe4e4, #f1a261);
     background-size: 200% 200%;
-    @include bg-pan-left;
+    @include bg-pan-left; 
     border-radius: $border-radius;
-    flex-grow: 1;
+    flex-grow: 1;    
 }
 
 .card-info {
@@ -44,41 +80,67 @@ main {
 
     &:hover {
         transform: scale($hover-scale);
-        box-shadow: 0 6px 12px
+        box-shadow: 0 6px 12px $box-shadow-color; 
     }
 
     img {
         width: 100%;
         height: auto;
-        max-height: 200px;
-        object-fit: cover;
+        max-height: 200px;  
+        object-fit: cover; 
         border-radius: $border-radius $border-radius 0 0;
-        margin-bottom: math.div($grid-gap, 2);
+        margin-bottom: math.div($grid-gap, 2); 
     }
 
     h3 {
         font-size: 1.2rem;
-        margin: math.div($grid-gap, 4) 0;
-        color: #333;
+        margin: math.div($grid-gap, 4) 0; 
+        color: #333; 
     }
 
     p {
         font-size: 1rem;
-        color: #666;
-        margin-bottom: math.div($grid-gap, 2);
+        color: #666;   
+        margin-bottom: math.div($grid-gap, 2); 
     }
 
     button {
         padding: 10px 20px;
         border: none;
-        background-color: #007BFF;
+        background-color: #007BFF; 
         color: #fff;
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.2s ease-in-out;
 
         &:hover {
-            box-shadow: 0 6px 12px
+            background-color: adjust(#007bff, -10%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: $grid-gap;
+
+    button {
+        padding: 8px 16px;
+        margin: 0 4px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &.active {
+            background-color: #007bff; 
+            color: white;
+            border-color: #007bff;
+        }
+
+        &:hover {
+            background-color: #eee;
         }
     }
 }

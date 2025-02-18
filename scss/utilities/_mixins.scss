@@ -14,3 +14,19 @@
   0% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+
+@mixin form-field($border-color, $focus-color) {
+  width: 100%;
+  padding: $spacing-small;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  box-sizing: border-box;
+
+  &:focus {
+      outline: none;
+      border-color: $focus-color;
+      box-shadow: 0 0 5px rgba($focus-color, 0.2);
+  }
+}
