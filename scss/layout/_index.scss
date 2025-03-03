@@ -1,18 +1,18 @@
-@import "../utilities/variables"; 
-@import "../utilities/mixins"; 
+@import "../utilities/variables";
+@import "../utilities/mixins";
 
 .section1 {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: $spacing-large;
     padding: $spacing-large;
 
     div {
-        flex: 1 1 30%; 
-        text-align: center; 
-        box-sizing: border-box; 
+        flex: 1 1 30%;
+        text-align: center;
+        box-sizing: border-box;
 
         p {
             font-size: 1.2rem;
@@ -27,8 +27,8 @@
     }
 
     .imagen-central {
-        flex: 1 1 40%; 
-        margin: $spacing-medium 0; 
+        flex: 1 1 40%;
+        margin: $spacing-medium 0;
 
         img {
             max-width: 100%;
@@ -39,18 +39,19 @@
     }
 
     @media (max-width: $breakpoint-tablet) {
-        flex-direction: column; 
+        flex-direction: column;
 
         div {
             flex: 1 1 100%;
+            margin-bottom: $spacing-medium; 
         }
 
         .imagen-central {
-            order: -1;
+            order: -1; 
+            margin-bottom: $spacing-medium; 
         }
     }
 }
-
 
 .section2 {
     padding: $spacing-large;
@@ -67,5 +68,9 @@
         line-height: 1.5;
         text-align: justify;
         color: $color-text;
+
+        @media (max-width: $breakpoint-tablet) {
+            font-size: 1rem;
+        }
     }
 }

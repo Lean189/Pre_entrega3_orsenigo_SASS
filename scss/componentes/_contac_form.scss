@@ -8,7 +8,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    .contac{
+
+    .contac {
         display: flex;
         text-align: center;
         margin-bottom: 20px;
@@ -28,6 +29,11 @@
             align-items: center;
             flex-wrap: nowrap;
         }
+
+        @media (max-width: $breakpoint-tablet) {
+            flex-direction: column; 
+            align-items: stretch; 
+        }
     }
 
     .contact-form {
@@ -37,7 +43,7 @@
         box-shadow: $box-shadow;
         width: 100%;
         max-width: 500px;
-        
+
         label {
             font-weight: bold;
             display: block;
@@ -69,7 +75,7 @@
             width: 100%;
             font-size: 1.1rem;
             font-weight: bold;
-            
+
             &:hover {
                 background-color: darken($color-bottom, 10%);
                 transform: scale(1.05);
@@ -78,10 +84,12 @@
     }
 
     .contact-image {
-        text-align: center; 
+        text-align: center;
+
         @media (min-width: $breakpoint-tablet) {
             text-align: left;
         }
+
         img {
             border-radius: $border-radius;
             box-shadow: $box-shadow;
@@ -89,20 +97,25 @@
             height: auto;
             display: block;
         }
+
+        @media (max-width: $breakpoint-tablet) {
+            margin-bottom: $spacing-large; 
+        }
     }
 }
-
 
 .social-media {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
-    img{
+
+    img {
         width: 50px;
         height: 50px;
         cursor: pointer;
-        img:hover{
+
+        img:hover {
             opacity: 0.8;
         }
     }
