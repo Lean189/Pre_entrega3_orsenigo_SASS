@@ -13,7 +13,7 @@ Amancay es un sitio web de front-end para un pequeño e-commerce. No incluye fun
 
 ## Despliegue
 
-* Desplegado en :
+* Desplegado en Vercel: https://pre-entrega3-orsenigo-sass.vercel.app
 
 ## Autor
 
